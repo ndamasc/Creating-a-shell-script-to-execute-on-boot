@@ -1,0 +1,13 @@
+[Unit]
+Description= run robot test on boot
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/term/dump/boot.sh
+StandardOutput=append:/home/term/dump/log.txt
+StandardError=append:/home/term/dump/log_error.txt
+
+
+[Install]
+WantedBy=multi-user.target
